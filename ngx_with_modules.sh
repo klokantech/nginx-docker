@@ -11,6 +11,7 @@ mkdir $TMPDIR
 cd $TMPDIR
 apt-get source nginx
 
+#our fork of bpaquet/ngx_http_enhanced_memcached_module with patch due problem with rewriting of headers
 git clone https://github.com/klokantech/ngx_http_enhanced_memcached_module.git
 sed -i "s#./configure #./configure --add-module=$TMPDIR/ngx_http_enhanced_memcached_module #g" nginx-*/debian/rules
 
