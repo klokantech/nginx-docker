@@ -11,7 +11,7 @@ mkdir $TMPDIR
 cd $TMPDIR
 apt-get source nginx
 
-git clone https://github.com/bpaquet/ngx_http_enhanced_memcached_module.git
+git clone https://github.com/klokantech/ngx_http_enhanced_memcached_module.git
 sed -i "s#./configure #./configure --add-module=$TMPDIR/ngx_http_enhanced_memcached_module #g" nginx-*/debian/rules
 
 cd $TMPDIR/nginx-*
