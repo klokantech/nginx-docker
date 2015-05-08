@@ -3,8 +3,6 @@ FROM debian:wheezy
 RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 573BFD6B3D8FBC641079A6ABABF5BD827BD9BF62
 RUN echo "deb-src http://nginx.org/packages/mainline/debian/ wheezy nginx" >> /etc/apt/sources.list
 
-ENV NGINX_VERSION 1.7.12-1~wheezy
-
 # build nginx with custom modules
 ADD ./ngx_with_modules.sh /tmp/
 RUN sh /tmp/ngx_with_modules.sh
