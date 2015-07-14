@@ -11,6 +11,8 @@ RUN sh /tmp/ngx_with_modules.sh > /dev/null \
 && ln -sf /dev/stdout /var/log/nginx/access.log \
 && ln -sf /dev/stderr /var/log/nginx/error.log
 
+COPY nginx.conf /etc/nginx/nginx.conf
+
 VOLUME ["/var/cache/nginx"]
 
 EXPOSE 80 443
