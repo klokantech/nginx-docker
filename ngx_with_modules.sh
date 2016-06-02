@@ -27,6 +27,7 @@ cd $TMPDIR/openresty-*
 make
 make install
 ldconfig
+cp -r /usr/local/nginx/conf/* /etc/nginx/
 cd /
 
 rm -r $TMPDIR
