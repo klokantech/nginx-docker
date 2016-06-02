@@ -8,6 +8,7 @@ RUN apt-key adv \
 
 COPY ngx_with_modules.sh /tmp/
 RUN sh /tmp/ngx_with_modules.sh > /dev/null \
+&& mkdir -p /var/log/nginx/ \
 && ln -sf /dev/stdout /var/log/nginx/access.log \
 && ln -sf /dev/stderr /var/log/nginx/error.log
 
