@@ -27,10 +27,12 @@ cd $TMPDIR/openresty-*
 make
 make install
 ldconfig
-cp -r /usr/local/nginx/conf/* /etc/nginx/
 cd /
 
 rm -r $TMPDIR
+
+mkdir -p /etc/nginx/conf.d/
+cp -r /usr/local/nginx/conf/* /etc/nginx/
 
 # Download Lua script for http communication
 wget -O /usr/local/lualib/resty/http.lua 'https://raw.githubusercontent.com/pintsized/lua-resty-http/master/lib/resty/http.lua'
