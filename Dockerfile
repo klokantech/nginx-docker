@@ -17,4 +17,4 @@ VOLUME ["/var/cache/nginx"]
 
 EXPOSE 80 443
 
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["/usr/local/nginx/sbin/nginx", "-g", "daemon off;", "-c", "/etc/nginx/nginx.conf"]
